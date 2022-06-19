@@ -1,0 +1,9 @@
+domain: pet2cattle.com
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: operatorsdk-example
+repo: github.com/pet2cattle/operatorsdk-example
+version: "3"
