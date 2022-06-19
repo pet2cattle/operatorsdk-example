@@ -18,6 +18,7 @@ package controllers
 
 import (
 	"context"
+	"fmt"
 
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
@@ -49,7 +50,15 @@ type DemoReconciler struct {
 func (r *DemoReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
 
-	// TODO(user): your logic here
+	// Fetch the Demo instance
+	demo := &examplev1.Demo{}
+	if err := r.Get(ctx, req.NamespacedName, demo); err != nil {
+		return ctrl.Result{}, client.IgnoreNotFound(err)
+	}
+
+	fmt.Printf("%#v\n", demo)
+
+	fmt.Printf("%#v\n", demo.Spec.Example)
 
 	return ctrl.Result{}, nil
 }
