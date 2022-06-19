@@ -25,11 +25,7 @@ import (
 
 // DemoSpec defines the desired state of Demo
 type DemoSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Demo. Edit demo_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Example string `json:"example"`
 }
 
 // DemoStatus defines the observed state of Demo
